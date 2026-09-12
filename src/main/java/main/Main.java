@@ -29,19 +29,31 @@ public class Main {
         clienteService.registrarCliente(cliente);
 
         Direccion direccionOrigen = new Direccion(
-                "Calle 10", "45-20", "Bogota", "110111"
+                "Calle 10",
+                "45-20",
+                "Bogota",
+                "110111"
         );
 
         Direccion direccionDestino = new Direccion(
-                "Carrera 50", "12-34", "Medellin", "050001"
+                "Carrera 50",
+                "12-34",
+                "Medellin",
+                "050001"
         );
 
         Empleado empleado1 = new Empleado(
-                1, "Carlos Perez", "Conductor", "3001112233"
+                1,
+                "Carlos Perez",
+                "Conductor",
+                "3001112233"
         );
 
         Empleado empleado2 = new Empleado(
-                2, "Laura Gomez", "Auxiliar", "3004445566"
+                2,
+                "Laura Gomez",
+                "Auxiliar",
+                "3004445566"
         );
 
         ArrayList<Empleado> empleados = new ArrayList<>();
@@ -49,15 +61,21 @@ public class Main {
         empleados.add(empleado2);
 
         Camion camion = new Camion(
-                "ABC123", "Chevrolet NPR", 3500.0
+                "ABC123",
+                "Chevrolet NPR",
+                3500.0
         );
 
         ObjetoTransportado objeto1 = new ObjetoTransportado(
-                "Sofa 3 puestos", 60.0, false
+                "Sofa 3 puestos",
+                60.0,
+                false
         );
 
         ObjetoTransportado objeto2 = new ObjetoTransportado(
-                "Televisor 55 pulgadas", 15.0, true
+                "Televisor 55 pulgadas",
+                15.0,
+                true
         );
 
         ArrayList<ObjetoTransportado> objetosTransportados = new ArrayList<>();
@@ -67,7 +85,7 @@ public class Main {
         ServicioMudanza servicio = new ServicioMudanza(
                 1,
                 LocalDate.of(2026, 10, 5),
-                "Natalia Fanador",
+                cliente,
                 direccionOrigen,
                 direccionDestino,
                 empleados,
@@ -91,7 +109,7 @@ public class Main {
         for (ServicioMudanza s : servicioMudanzaService.listarServicios()) {
             System.out.println(s.getId());
             System.out.println(s.getFechaProgramada());
-            System.out.println(s.getCliente());
+            System.out.println(s.getCliente().getNombre());
             System.out.println(s.getDireccionOrigen().getCiudad());
             System.out.println(s.getDireccionDestino().getCiudad());
             System.out.println(s.getCamion().getPlaca());

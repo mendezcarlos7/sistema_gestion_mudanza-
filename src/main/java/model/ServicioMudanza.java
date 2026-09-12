@@ -7,7 +7,7 @@ public class ServicioMudanza {
 
     private int id;
     private LocalDate fechaProgramada;
-    private String cliente;
+    private Cliente cliente;
     private Direccion direccionOrigen;
     private Direccion direccionDestino;
     private ArrayList<Empleado> empleados;
@@ -17,8 +17,9 @@ public class ServicioMudanza {
     public ServicioMudanza() {
     }
 
-    public ServicioMudanza(int id, LocalDate fechaProgramada, String cliente, Direccion direccionOrigen,
-                           Direccion direccionDestino, ArrayList<Empleado> empleados, Camion camion,
+    public ServicioMudanza(int id, LocalDate fechaProgramada, Cliente cliente,
+                           Direccion direccionOrigen, Direccion direccionDestino,
+                           ArrayList<Empleado> empleados, Camion camion,
                            ArrayList<ObjetoTransportado> objetosTransportados) {
         this.id = id;
         this.fechaProgramada = fechaProgramada;
@@ -46,11 +47,11 @@ public class ServicioMudanza {
         this.fechaProgramada = fechaProgramada;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
